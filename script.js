@@ -14,6 +14,7 @@ sounds.forEach((sound) => {
 
     // Add the button to the DOM
     document.getElementById('buttons').appendChild(btn);
+});
 
 
 

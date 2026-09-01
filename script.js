@@ -12,10 +12,26 @@ sounds.forEach((sound) => {
     // Set the button label text to be the same as the string value in the sounds array
     btn.innerText = sound;
 
+    // Add an event listener to this button
+    btn.addEventListener('click', () => {
+        // Stop all sounds first
+        stopSounds();
+    document.getElementById(sound).play();
+    });
+
     // Add the button to the DOM
     document.getElementById('buttons').appendChild(btn);
 });
 
+// Helper functions
+function stopSounds() {
+    sounds.forEach((sound) => {
+        const snd = document.getElementById(sound);
+
+        snd.pause();
+        snd.currentTime = 0;
+    });
+}
 
 
 
